@@ -23,8 +23,13 @@
 
         private static void ArithmeticAndArithmeticMethods()
         {
-            int intInput1 = 10;
-            int intInput2 = 3; 
+            Console.WriteLine("Enter the first number");
+            int intInput1 = Console.Read();
+
+            Console.WriteLine("Enter the second number");
+            int intInput2; 
+            intInput2 = Console.Read();
+
             Console.WriteLine("Addition = " + (intInput1 + intInput2));
             Console.WriteLine("Subtraction = " + (intInput1 - intInput2));
             Console.WriteLine("Multiplication = " + intInput1 * intInput2);
@@ -34,10 +39,12 @@
 
         private static void FloatMethods()
         {
-            float floatInput1;
-            float floatInput2;
-            floatInput1 = 10f;
-            floatInput2 = 15f;
+            Console.WriteLine("Enter the first float");
+            float floatInput1 = Console.Read();
+
+            Console.WriteLine("Enter the second float");
+            float floatInput2 = Console.Read();
+
             Console.WriteLine("floatInput2 = " + floatInput2);
             floatInput2 = floatInput2 + floatInput1;
             Console.WriteLine("floatInput2 = " + floatInput2);
@@ -51,10 +58,12 @@
 
         private static void ComparisonsAndConditionals()
         {
-            int intInput1;
-            int intInput2;
-            intInput1 = 20;
-            intInput2 = 30;
+            Console.WriteLine("Enter the first number for comparison");
+            int intInput1 = Console.Read();
+
+            Console.WriteLine("Enter the second number for comparison");
+            int intInput2 = Console.Read();
+
             if (intInput1 == intInput2)
             {
                 Console.WriteLine("Inputs 1 and 2 are the same.");
