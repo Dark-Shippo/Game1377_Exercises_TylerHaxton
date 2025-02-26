@@ -67,11 +67,6 @@ namespace RockPaperScissorsLizardWizardSpock
                     Console.WriteLine("Your Opponent wins this round!");
                     opponentRoundWinCount++;
                 }
-                // This may be redundant but is used to ensure a tie is declared if previous code runs but doesn't determine a winner or loser.
-                else
-                {
-                    Console.WriteLine("It's a tie! No points awarded");
-                }
 
                 Console.WriteLine($"Score - Player {playerRoundWinCount}, Opponent {opponentRoundWinCount}");
 
