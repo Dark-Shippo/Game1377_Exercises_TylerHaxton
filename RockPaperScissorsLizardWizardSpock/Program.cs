@@ -15,6 +15,9 @@ namespace RockPaperScissorsLizardWizardSpock
         {
             string[] choicesList = { "rock", "paper", "scissors", "lizard", "spock" };
             string? roundStart = "Please choose Rock, Paper, Scissors, Lizard, or Spock.";
+
+            // Using the dictionary we call a string from the array and declare on the right the strings that they beat.
+            // This way we compare rock to scissors for determining who wins.
             Dictionary<string, List<string>> winConditions = new Dictionary<string, List<string>>()
             {
                 { "rock", new List<string> { "scissors", "lizard" } },
@@ -33,7 +36,8 @@ namespace RockPaperScissorsLizardWizardSpock
                 Console.WriteLine("\n" + "First to five wins." + "\n" + roundStart);
                 string? userInput = Console.ReadLine()?.Trim().ToLower();
 
-                if (!Array.Exists(choicesList, choice => choice.Equals(userInput, StringComparison.OrdinalIgnoreCase)))
+                // makes sure the user input is correct.
+                if (!(userInput == choicesList[choicesList.Length - 1]))
                 {
                     Console.WriteLine("Invalid choice!.");
                     continue;
@@ -44,20 +48,26 @@ namespace RockPaperScissorsLizardWizardSpock
 
                 Console.WriteLine($"Opponent chose: {opponentChoice}");
 
+                // if userInput is "Rock" it will check the winConditions section declared in the disctionary.
+                // if it finds the choice determined from the opponentChoice inside the winConditions it will declare the player the winner.
                 if (winConditions[userInput].Contains(opponentChoice))
                 {
                     Console.WriteLine("You win this round!");
                     playerRoundWinCount++;
                 }
-                else if (userInput.Equals(opponentChoice, StringComparison.OrdinalIgnoreCase))
+
+                else if (userInput == opponentChoice)
                 {
                     Console.WriteLine("It's a tie!");
                 }
+                // if opponentChoice is "Rock" it will check the winConditions section declared in the disctionary.
+                // if it finds the choice determined from the userInput inside the winConditions it will declare the Opponent the winner.
                 else if (winConditions[opponentChoice].Contains(userInput))
                 {
                     Console.WriteLine("Your Opponent wins this round!");
                     opponentRoundWinCount++;
                 }
+                // This may be redundant but is used to ensure a tie is declared if previous code runs but doesn't determine a winner or loser.
                 else
                 {
                     Console.WriteLine("It's a tie! No points awarded");
