@@ -1,6 +1,4 @@
-﻿using System.Runtime.ExceptionServices;
-
-namespace RockPaperScissorsLizardWizardSpock
+﻿namespace RockPaperScissorsLizardWizardSpock
 {
     internal class Program
     {
