@@ -34,7 +34,7 @@ namespace RockPaperScissorsLizardWizardSpock
             while (isPlaying)
             {
                 Console.WriteLine("\n" + "First to five wins." + "\n" + roundStart);
-                string? userInput = Console.ReadLine()?.Trim().ToLower();
+                string? userInput = Console.ReadLine()?.ToLower();
 
                 // makes sure the user input is correct.
                 if (!(userInput == choicesList[choicesList.Length - 1]))
