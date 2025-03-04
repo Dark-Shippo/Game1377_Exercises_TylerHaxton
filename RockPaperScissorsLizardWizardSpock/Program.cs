@@ -35,7 +35,7 @@
                 string? userInput = Console.ReadLine()?.ToLower();
 
                 // makes sure the user input is correct.
-                if (!(userInput == choicesList[choicesList.Length - 1]))
+                if (!choicesList.Contains(userInput))
                 {
                     Console.WriteLine("Invalid choice!.");
                     continue;
